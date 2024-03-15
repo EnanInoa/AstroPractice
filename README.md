@@ -1,6 +1,6 @@
 # 🚀 Proyecto de Prueba en Astro 🌌
 
-¡Bienvenido al impresionante proyecto de prueba en Astro de Enán! Este repositorio contiene un proyecto básico desarrollado utilizando Astro, una herramienta moderna para la construcción de sitios web estáticos con React.
+¡Bienvenido al impresionante proyecto de prueba en Astro de Enán! Este repositorio contiene un proyecto básico desarrollado utilizando Astro, una herramienta moderna para la construcción de sitios web estáticos.
 
 ## 📝 Descripción
 
