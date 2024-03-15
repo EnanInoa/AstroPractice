@@ -1,0 +1,103 @@
+---
+import HeaderButton from "../components/HeaderButton.astro";
+---
+
+<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+    <div class="mx-auto text-center mb-4 lg:mb-8">
+        <h2 class="mb-4 text-5xl tracking-tight font-bold text-white">
+            Mi Portafolio
+        </h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            Bienvenido <span class="text-red-400">Enán Inoa</span>
+        </p>
+    </div>
+
+    <nav
+        class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+    >
+        <HeaderButton href="/" class="text-white gradient">
+            <svg
+                slot="after"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-test-pipe"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M20 8.04l-12.122 12.124a2.857 2.857 0 1 1 -4.041 -4.04l12.122 -12.124"
+                ></path><path d="M7 13h8"></path><path
+                    d="M19 15l1.5 1.6a2 2 0 1 1 -3 0l1.5 -1.6z"></path><path
+                    d="M15 3l6 6"></path></svg
+            >
+            Prueba
+        </HeaderButton>
+        <HeaderButton href="/" class="text-white">
+            <svg
+                slot="nada"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-report-money"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+                ></path><path
+                    d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+                ></path><path
+                    d="M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"
+                ></path><path d="M12 17v1m0 -8v1"></path></svg
+            >
+            Otras
+        </HeaderButton>
+        <HeaderButton href="/" class="text-white">
+            <svg
+                slot="before"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-report-money"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+                ></path><path
+                    d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+                ></path><path
+                    d="M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"
+                ></path><path d="M12 17v1m0 -8v1"></path></svg
+            >
+        </HeaderButton>
+        <HeaderButton href="/about" class="text-white">
+            <svg
+                slot="before"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-info-circle"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path
+                    d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg
+            >About
+        </HeaderButton>
+    </nav>
+</header>

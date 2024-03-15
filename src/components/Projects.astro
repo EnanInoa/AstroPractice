@@ -1,0 +1,74 @@
+---
+import { type APIClashRoyale } from "../types/api.ts";
+
+
+const rarityColors = {
+    common: "slate-400",
+    rare: "orange-400",
+    epic: "violet-600",
+    legendary: "yellow-500",
+    champion: "rose-600",
+};
+
+const limit = "8";
+const apiUrl = `https://api.clashroyale.com/v1/cards`;
+const token =
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjVjYmFiNzQ0LTRmZjUtNDM0NS05ZmFmLTRlNDJjZmUxNzBlZSIsImlhdCI6MTcwOTMyMTgyMywic3ViIjoiZGV2ZWxvcGVyLzlkMjRkYmMwLThjZWQtMmYxMS1hZTI5LWI5YWU1YzhiMTFkOSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODEuMzcuMTI3LjI0MiJdLCJ0eXBlIjoiY2xpZW50In1dfQ.rxj4XxUw1US3TLSZzHOZ9v2cEQzusefxS3kZHtLdTcGmg4J7VOCNA7IjXrl6yLFiF8yIHUbcTF8YSAlKcirF4w";
+
+const headers = new Headers({
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json", // Ajusta según el tipo de contenido que la API espera
+});
+
+
+
+const res = await fetch(apiUrl, { method: "GET", headers });
+let { items } = (await res.json()) as APIClashRoyale;
+// items = items.slice(0, 90);
+console.clear();
+// console.log("-----------");
+console.log(items);
+console.log(res);
+
+---
+
+<div class="grid gap-8 justify-center sm:grid-cols-2 lg:grid-cols-4 mx-auto justify-items-center">
+    { 
+        items?.map((c) => (
+            <div class={`grid max-w-44 text-${rarityColors[c.rarity]} border-solid border-2 w-fit rounded-lg relative`}>
+                <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+  <a href="#">
+    <img class="h-56 bg-contain bg-top object-none" src=`${c.iconUrls.medium}` alt="image description">
+  </a>
+  <figcaption class="absolute px-4 text-lg text-white -bottom-6 w-full text-center grid justify-center">
+    <p class="font-bold w-fit">{c.name}</p>
+    <p class={`text-${rarityColors[c.rarity]}`}>{c.rarity}</p>
+    </figcaption>
+    </figure>
+    <p class="inline-flex absolute font-semibold text-1xl stroke-black -left-3 -top-3 font-mono shadow-black">
+        <span class="mx-2.5 my-1 absolute z-50">
+            {c.elixirCost}{" "}
+            </span>
+            <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-droplet-filled absolute"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#d000ff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M10.708 2.372a2.382 2.382 0 0 0 -.71 .686l-4.892 7.26c-1.981 3.314 -1.22 7.466 1.767 9.882c2.969 2.402 7.286 2.402 10.254 0c2.987 -2.416 3.748 -6.569 1.795 -9.836l-4.919 -7.306c-.722 -1.075 -2.192 -1.376 -3.295 -.686z"
+                    stroke-width="0"
+                    fill="#ae00ff"
+                />
+        </svg>
+    </p>
+            </div>
+        ))
+    }
+</div>

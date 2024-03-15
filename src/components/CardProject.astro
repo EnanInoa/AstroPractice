@@ -1,0 +1,13 @@
+---
+interface Props {
+    name: string;
+    id: Number;
+    rarity: string;
+    elixirCost: Number;
+    iconUrls: {
+        medium: string;
+    };
+}
+
+const { name, id, rarity, elixirCost, iconUrls } = Astro.props;
+---
